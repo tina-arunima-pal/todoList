@@ -28,7 +28,8 @@ public class taskController {
 	}
 	
 	@GetMapping("/listTasks/{user}")
-	public List<Task> getTasks(@PathVariable String user){
+	public List<Task> getTasks(@PathVariable("user") String user){
+		System.out.println("inside getmapping");
 		return service.showAllTasks(user);
 		
 		
@@ -41,8 +42,8 @@ public class taskController {
 	}
 	
 	@DeleteMapping("/DeleteTask/{taskId}")
-	public void deleteTask(@PathVariable int taskid) {
-		service.deleteTask(taskid);
+	public void deleteTask(@PathVariable("taskId") int taskId) {
+		service.deleteTask(taskId);
 	}
 
 }

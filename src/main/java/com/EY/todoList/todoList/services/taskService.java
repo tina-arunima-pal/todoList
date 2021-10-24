@@ -33,6 +33,7 @@ public class taskService {
 	}
 	
     public List<Task> showAllTasks(String user){
+    	System.out.println("Inside showAllTasks");
 		 return repo.findAllByUser(user);
     	
 	}

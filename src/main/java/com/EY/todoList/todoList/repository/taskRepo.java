@@ -13,8 +13,8 @@ import com.EY.todoList.todoList.entity.Task;
 @Repository
 public interface taskRepo extends JpaRepository<Task, Integer> {
 	
-	@Query("select t.taskId,t.user,t.taskName,t.description,t.status,t.createdDate,t.updatedDate from Task t where t.user = :user") 
-	 List<Task> findAllByUser(String user);
+	@Query("select t from Task t where t.user = ?1") 
+	 List<Task> findAllByUser(@Param("user")String user);
 	
 
 
